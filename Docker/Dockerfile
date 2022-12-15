@@ -88,6 +88,7 @@ RUN apt-get update \
 	librealsense2-utils \
 	librealsense2-dev  \
 	librealsense2-dbg \
+	v4l-utils \
 	# Upgrade the local packages 
 	&& apt-get update && apt-get --only-upgrade install -y librealsense2-utils librealsense2-dkms ros-melodic-realsense2-camera ros-melodic-ddynamic-reconfigure
 
@@ -108,5 +109,5 @@ RUN /bin/bash -c "source ~/.bashrc" \
 	&& /bin/bash -c "source /opt/ros/melodic/setup.bash; catkin_make --cmake-args -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release" \
 	&& /bin/bash -c "source /opt/ros/melodic/setup.bash; catkin_make install" 
 	
-RUN echo "source /home/Workspace/catkin_ws/devel/setup.bash" >> ~/.bashrc \
+RUN echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc \
 	&& /bin/bash -c "source ~/.bashrc"
