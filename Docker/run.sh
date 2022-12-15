@@ -6,5 +6,5 @@ docker run --gpus all -it --rm \
     --device=/dev/video4:/dev/video4 \
     --device=/dev/video5:/dev/video5 \
     -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY \
-    -v $HOME/ur-Ubuntu18:/root/realsense-ubuntu18 \
+    -v $HOME/realsense_melodic:/root/realsense_melodic \
     realsense-melodic bash
